@@ -1,0 +1,191 @@
+/* Reset Css  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+body{
+    background-color: #dddddd;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;   
+}
+.app-container{
+    margin-top: 170px;
+    border-radius: 15px;
+    width: 75%;
+    height: 60vh;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.todo-session,
+.progress-session,
+.completed-session{
+    width: 20%;
+    height: fit-content;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.todo-session .todo-session-title,
+.progress-session .progress-session-title,
+.completed-session .completed-session-title{
+    text-align: center;
+    font-size: 25px;
+    color: #565557;
+    background-color: white;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    border-radius: 10px;
+}
+.todo-session .todo-session-title{
+    border-top: 5px solid #a699f3;
+}
+.progress-session .progress-session-title{
+    border-top: 5px solid #3b92f9;
+}
+.completed-session .completed-session-title{
+    border-top: 5px solid #E74C3C;
+}
+.progress-session,
+.completed-session{
+    margin-left: 5%;
+}
+.todo-session .todo-session-card-area,
+.progress-session .progress-session-card-area,
+.completed-session .completed-session-card-area{
+    width: 100%;
+    height: fit-content;
+    margin: 20px 0 20px 0;
+    min-height: 25px;
+    max-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: auto;
+}
+.task-card{
+    width: 65%;
+    height: 8vh;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.task-card .task-card-priority-value{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    background-color: red;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: white;
+    margin: 15px 0 0 15px;
+}
+.task-card .task-card-title{
+    font-size: 1.2rem;
+    margin: 15px 0 0 15px;
+}
+.task-card .task-card-settings-icon {
+    cursor: pointer;
+    margin: 0 0 5px 210px;
+}
+.task-card .task-card-settings-icon img{
+    width: 16px;
+    height: 16px;
+}
+.todo-session .todo-session-add-task-button{
+    width: 75%;
+    height: 50px;
+    background-color: white;
+    border: none;
+    color: #8c919b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.todo-session .add-task-button img{
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    margin-left: 15px;
+}
+.profile-buttons{
+    border-radius: 15px;
+    margin-top: 100px;
+    width: 30%;
+    height: 8vh;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.profile-buttons .github-profile-button{
+    background: url(./img/github-button-img.png);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+.profile-buttons .github-profile-button a div{
+    width: 50px;
+    height: 50px;
+}
+.profile-buttons .linkedin-profile-button{
+    background: url(./img/linkedin-button-img.png);
+    cursor: pointer;
+    margin-left: 25px;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+.profile-buttons .linkedin-profile-button a div{
+    width: 50px;
+    height: 50px;
+}
+.add-task-button-popup{
+    margin-top: 170px;
+    border-radius: 15px;
+    width: 75%;
+    height: 60vh;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.task-card-settings-menu{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+}
+.task-card-settings-menu div{
+    opacity: 0.7;
+    background-color: #ffffff;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.task-card-settings-menu div:nth-child(1){
+    margin-top: 50px;
+}
+.task-card-settings-menu div img{
+    margin-left: 15px;
+}
