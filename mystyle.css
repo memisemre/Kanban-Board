@@ -130,7 +130,7 @@ body{
     width: 30%;
     height: 8vh;
     background-color: #eeeeee;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
