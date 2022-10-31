@@ -101,7 +101,7 @@ body{
 }
 .task-card .task-card-settings-icon {
     cursor: pointer;
-    margin: 0 0 5px 210px;
+    margin: -15px 180px;
 }
 .task-card .task-card-settings-icon img{
     width: 16px;
