@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Kanban Board</title>
     <link rel="stylesheet" href="mystyle.css">
 </head>
@@ -20,26 +19,26 @@
                     <h1 class="task-card-title">Task Card Title</h1>
                     <div class="task-card-settings-icon">
                         <img src="settings.png" alt="">
+                        <div class="task-card-settings-menu">
+                            <div class="change-session-todo">
+                                Todo Session <img src="transfer.png" alt="">
+                            </div>
+                            <div class="change-session-progress">
+                                Progress Session <img src="transfer.png" alt="">
+                            </div>
+                            <div class="change-session-completed">
+                                Change Session <img src="transfer.png" alt="">
+                            </div>
+                            <div class="delete-task-card">
+                                Delete Card <img src="delete.png" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div> -->
             </div>
             <button class="todo-session-add-task-button">
                 New Task <img src="add.png" alt="">
             </button>
-            <div class="task-card-settings-menu">
-                <div class="change-session-todo">
-                    Todo Session <img src="transfer.png" alt="">
-                </div>
-                <div class="change-session-progress">
-                    Progress Session <img src="transfer.png" alt="">
-                </div>
-                <div class="change-session-completed">
-                    Change Session <img src="transfer.png" alt="">
-                </div>
-                <div class="delete-task-card">
-                    Delete Card <img src="delete.png" alt="">
-                </div>
-            </div>
         </div>
         <div class="progress-session">
             <h1 class="progress-session-title">In Progress</h1>
@@ -50,7 +49,18 @@
             <div class="completed-session-card-area"></div>
         </div>
     </div>
-   
+    <div class="add-task-card-menu-container">
+        <h1 class="task-card-menu-title">Task Title</h1>
+        <input type="text" class="task-card-title-input" >
+        <h1 class="task-card-menu-priority">Priority</h1>
+        <input type="radio" name="priority" class="high-priority" value="High Priority">
+        <label for="high-priority">High Priority</label>
+        <input type="radio" name="priority" class="medium-priority" value="Medium Priority">
+        <label for="medium-priority">Medium Priority</label>
+        <input type="radio" name="priority" class="low-priority" value="Low Priority">
+        <label for="low-priority">Low Priority</label>
+        <button class="add-task-card-menu-button">Add Task</button>
+    </div> 
     <div class="profile-buttons">
         <div class="github-profile-button"> 
             <a href="https://github.com/memisemre" target="_blank">
