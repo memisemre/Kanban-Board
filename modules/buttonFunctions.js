@@ -5,7 +5,6 @@ export function todoSessionAddTaskButtonAddFunction(appContainer,addTaskCardMenu
     });
 };
 import { newTaskCardAddUI } from "./createNewTaskCardUI.js";
-import { addtoLocalStorage } from "./localStorageFunctions.js";
 export function addTaskMenuButtonAddFunction(appContainer,addTaskCardMenuContainer){
     document.querySelector(".add-task-card-menu-button").addEventListener("click",()=>{
         appContainer.style.opacity = "1";
@@ -22,7 +21,6 @@ export function addTaskMenuButtonAddFunction(appContainer,addTaskCardMenuContain
             taskCardPriorityValue = 3;
         }
         newTaskCardAddUI(newTaskCardTitle,taskCardPriorityValue);
-        let localStorageValuesArray = [newTaskCardTitle,taskCardPriorityValue];
-        addtoLocalStorage(localStorageValuesArray);
-    });
+        }
+    );
 }

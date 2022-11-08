@@ -1,5 +1,6 @@
+import { deleteCardFromUI } from "./deleteCard.js";
 export function newTaskCardAddUI(newTaskCardTitle,taskCardPriorityValue){
-    let sessionValue;
+    let sessionValue = 1;
     const taskCardPriority = document.createElement("div");
     const newTaskCard = document.createElement("div");
     const taskCardTitle = document.createElement("h1");
@@ -60,7 +61,7 @@ function selectSession(sessionValue,newTaskCard){
     if(sessionValue == 3) document.querySelector(".completed-session-card-area").appendChild(newTaskCard);
 }
 function selectPriority(taskCardPriorityValue,taskCardPriority){
-    if(taskCardPriorityValue == 1){
+        if(taskCardPriorityValue == 1){
         taskCardPriority.style.background = "#E26868";
         taskCardPriority.appendChild(document.createTextNode("High Priority"));
         }
@@ -72,7 +73,4 @@ function selectPriority(taskCardPriorityValue,taskCardPriority){
         taskCardPriority.style.background = "#84adfd";
         taskCardPriority.appendChild(document.createTextNode("Low Priority"));
         }
-}
-function deleteCardFromUI(settingsDeleteButtonTaskCard){
-    settingsDeleteButtonTaskCard.parentElement.parentElement.parentElement.remove();
-}
+};
