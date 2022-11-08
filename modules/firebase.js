@@ -39,4 +39,4 @@ export function getAllData(){
             newTaskCardAddUI(card.cardName,card.priority, card.session);
         });
         startApp();
-    }));}
+}));}
