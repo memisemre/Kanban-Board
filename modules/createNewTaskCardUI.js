@@ -1,6 +1,5 @@
-import { deleteCardFromUI } from "./deleteCard.js";
-export function newTaskCardAddUI(newTaskCardTitle,taskCardPriorityValue){
-    let sessionValue = 1;
+import { updateCardFromData , removeCardFromData } from "./firebase.js";
+export function newTaskCardAddUI(newTaskCardTitle,taskCardPriorityValue,sessionValue){
     const taskCardPriority = document.createElement("div");
     const newTaskCard = document.createElement("div");
     const taskCardTitle = document.createElement("h1");
@@ -16,24 +15,27 @@ export function newTaskCardAddUI(newTaskCardTitle,taskCardPriorityValue){
     taskCardTitle.className = "task-card-title";
     taskCardTitle.appendChild(document.createTextNode(newTaskCardTitle));
     taskCardSettingsIcon.className = "task-card-settings-icon";
-    taskCardSettingsIcon.innerHTML = "<img src='settings.png' alt=''>";
+    taskCardSettingsIcon.innerHTML = "<img src='./img/settings.png' alt=''>";
     taskCardSettingsMenu.className = "task-card-settings-menu";
-    settingsChangeSessionTodo.innerHTML = "Todo Session <img src='transfer.png' alt=''>";
+    settingsChangeSessionTodo.innerHTML = "Todo Session <img src='./img/transfer.png' alt=''>";
     settingsChangeSessionTodo.addEventListener("click",()=>{
         sessionValue = 1;
         selectSession(sessionValue,newTaskCard);
+        updateCardFromData(newTaskCardTitle,taskCardPriorityValue,sessionValue);
     });
-    settingsChangeSessionProgress.innerHTML = "Progress Session <img src='transfer.png' alt=''>";
+    settingsChangeSessionProgress.innerHTML = "Progress Session <img src='./img/transfer.png' alt=''>";
     settingsChangeSessionProgress.addEventListener("click",()=>{
         sessionValue = 2;
         selectSession(sessionValue,newTaskCard);
+        updateCardFromData(newTaskCardTitle,taskCardPriorityValue,sessionValue);
     });
-    settingsChangeSessionCompleted.innerHTML = "Complete Session <img src='transfer.png' alt=''>";
+    settingsChangeSessionCompleted.innerHTML = "Complete Session <img src='./img/transfer.png' alt=''>";
     settingsChangeSessionCompleted.addEventListener("click",()=>{
         sessionValue = 3;
         selectSession(sessionValue,newTaskCard);
+        updateCardFromData(newTaskCardTitle,taskCardPriorityValue,sessionValue);
     }); 
-    settingsDeleteButtonTaskCard.innerHTML = "Delete Card <img src='delete.png' alt=''>";
+    settingsDeleteButtonTaskCard.innerHTML = "Delete Card <img src='./img/delete.png' alt=''>";
     taskCardSettingsMenu.appendChild(settingsChangeSessionTodo);
     taskCardSettingsMenu.appendChild(settingsChangeSessionProgress);
     taskCardSettingsMenu.appendChild(settingsChangeSessionCompleted);
@@ -51,9 +53,10 @@ export function newTaskCardAddUI(newTaskCardTitle,taskCardPriorityValue){
         }
     });
     settingsDeleteButtonTaskCard.addEventListener("click",()=>{
-        deleteCardFromUI(settingsDeleteButtonTaskCard);
+        settingsDeleteButtonTaskCard.parentElement.parentElement.parentElement.remove();
+        removeCardFromData(newTaskCardTitle);
     });
-    document.querySelector(".todo-session-card-area").appendChild(newTaskCard);
+    selectSession(sessionValue,newTaskCard);
 };
 function selectSession(sessionValue,newTaskCard){
     if(sessionValue == 1) document.querySelector(".todo-session-card-area").appendChild(newTaskCard);

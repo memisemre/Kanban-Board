@@ -7,6 +7,7 @@
 a {
     text-decoration: none;
 }
+/* Custom Css */
 body{
     background-color: #dddddd;
     width: 100%;
@@ -117,6 +118,11 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.todo-session-add-task-button img{
+    margin-left: 15px;
+    width: 16px;
+    height: 16px;
 }
 .todo-session .add-task-button img{
     width: 16px;

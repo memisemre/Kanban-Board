@@ -1,8 +1,11 @@
-import { todoSessionAddTaskButtonAddFunction,addTaskMenuButtonAddFunction } from "./modules/buttonFunctions.js";
+import { todoSessionAddTaskButtonAddFunction, addTaskMenuButtonAddFunction } from "./modules/buttonFunctions.js";
+import { getAllData } from "./modules/firebase.js";
 const appContainer = document.querySelector(".app-container");
 const addTaskCardMenuContainer = document.querySelector(".add-task-card-menu-container");
-function startApp(){
+export function startApp(){
     addTaskMenuButtonAddFunction(appContainer,addTaskCardMenuContainer);
     todoSessionAddTaskButtonAddFunction(appContainer,addTaskCardMenuContainer);
 }
-startApp();
+window.addEventListener("DOMContentLoaded",()=>{
+    getAllData();
+});
