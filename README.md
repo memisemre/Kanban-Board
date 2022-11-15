@@ -1,6 +1,5 @@
-
-## Kanban Board
-### <div align="center">👨‍💻I'm Emre Memis, I am an economics student learning front-end development.</div>  
+<h1>Kanban Board</h1>
+ <div align="center">👨‍💻I'm Emre Memis, I am an economics student learning front-end development.</div>  
 <br/>   
 <h3> Languages and Tools </h3>  <hr/> 
 <div align="center">  
