@@ -4,54 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="KanbanBoard,HTML, CSS, JavaScript">
-    <meta name="author" content="Emre Memis">
-    <meta name="description" content="My KanbanBoard Project">
-    <title>Kanban Board</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/customCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div class="logo">
+        <a href="#"><img src="/logo.png" alt="logo"></a>
+    </div>
     <div class="app-container">
         <div class="todo-session">
-            <h1 class="todo-session-title">To Do</h1>
-            <div class="todo-session-card-area">
+            <div class="todo-session-title-area">
+                <h1 class="session-title">To Do</h1>
+                <div class="todo-session-total-card">
+                    <span>0</span>
+                </div>
+                <div class="todo-session-add-card-button"></div>
             </div>
-            <button class="todo-session-add-task-button">
-                New Task <img src="./img/add.png" alt="">
-            </button>
+            <div class="todo-session-card-area">
+                <!-- <div class="task-card">
+                    <div class="task-card-priority"></div>
+                    <h1 class="task-card-title">Task Card Title</h1>
+                    <div class="settings-icon">
+                        <i class="fa fa-light fa-gear"></i>
+                    </div>
+                </div> -->
+            </div>
         </div>
         <div class="progress-session">
-            <h1 class="progress-session-title">In Progress</h1>
+            <div class="progress-session-title-area">
+                <h1 class="session-title">Progress</h1>
+                <div class="progress-session-total-card">
+                    <span>0</span>
+                </div>
+                <div class="progress-session-add-card-button"></div>
+            </div>
             <div class="progress-session-card-area"></div>
         </div>
-        <div class="completed-session">
-            <h1 class="completed-session-title">Completed</h1>
-            <div class="completed-session-card-area"></div>
+        <div class="review-session">
+            <div class="review-session-title-area">
+                <h1 class="session-title">Review</h1>
+                <div class="review-session-total-card">
+                    <span>0</span>
+                </div>
+                <div class="review-session-add-card-button"></div>
+            </div>
+            <div class="review-session-card-area"></div>
+        </div>
+        <div class="end-session">
+            <div class="end-session-title-area">
+                <h1 class="session-title">End</h1>
+                <div class="end-session-total-card">
+                    <span>0</span>
+                </div>
+                <div class="end-session-add-card-button"></div>
+            </div>
+            <div class="end-session-card-area"></div>
         </div>
     </div>
-    <div class="add-task-card-menu-container">
-        <h1 class="task-card-menu-title">Task Title</h1>
-        <input type="text" class="task-card-title-input" >
-        <h1 class="task-card-menu-priority">Priority</h1>
-        <input type="radio" name="priority" class="high-priority" value="High Priority">
-        <label for="high-priority">High Priority</label>
-        <input type="radio" name="priority" class="medium-priority" value="Medium Priority">
-        <label for="medium-priority">Medium Priority</label>
-        <input type="radio" name="priority" class="low-priority" value="Low Priority">
-        <label for="low-priority">Low Priority</label>
-        <button class="add-task-card-menu-button">Add Task</button>
-    </div> 
-    <div class="profile-buttons">
-        <div class="github-profile-button"> 
-            <a href="https://github.com/memisemre" target="_blank">
-                <div></div>
-            </a>
-        </div>
-        <div class="linkedin-profile-button">
-            <a href="https://www.linkedin.com/in/emre-memi%C5%9F-1aab5724b/" target="_blank">
-                <div></div>
-            </a>
-        </div>
+    <div class="add-card-menu-page-one">
+        <input type="text" name="title" value="Please, enter the title of task." onfocus="if(this.value!=='')this.value=''" onblur="if(this.value=='')this.value='Please, enter the title of task.'" >
+        <button >Next Step</button>
+    </div>
+    <div class="add-card-menu-page-two">
+        <button class="high-priority">High Priority</button>
+        <button class="medium-priority">Medium Priority</button>
+        <button class="low-priority">Low Priority</button>
     </div>
     <script type="module" src="app.js"></script>
 </body>

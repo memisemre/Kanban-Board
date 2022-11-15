@@ -1,0 +1,259 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Bebas+Neue&family=Ms+Madi&family=Open+Sans:ital,wght@0,400;0,700;1,300;1,500&family=Roboto+Mono&family=Roboto+Slab:wght@900&family=Roboto:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Alegreya', serif;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Ms Madi', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Slab', serif; */
+    font-family: Circular,system,-apple-system,\.SFNSText-Regular,San Francisco,Roboto,Segoe UI,Helvetica Neue,Lucida Grande,sans-serif;
+    font-size: 1.2rem;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --body--background--color: #33333d;
+    --session--title--color: #f2f2f4;
+    --red: #ff5c5c;
+    --green: #39da8a;
+    --orange: #fdac41;
+    --purple: #ac5cd9;
+    --input--blue: #2196f3;
+    --priority--red: #ff5c5c ;
+    --priority--yellow: #fedd49;
+    --priority--blue: #2196f3;
+}
+body{
+    background-color: var(--body--background--color);
+}
+.logo{
+    position: absolute;
+    top: -2.1vh;
+    left: -2vh;
+}
+.logo a img {
+    height: 15vh;
+}
+.app-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    margin-top: 10vh;
+    opacity: 1;
+}
+.todo-session-title-area,
+.progress-session-title-area,
+.review-session-title-area,
+.end-session-title-area{
+    width: 350px;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
+    border: 4px solid rgba(51, 51, 61, 0.74);
+    transition: 0.4s all ease;
+    border-radius: 10px;
+    color: var(--session--title--color);
+}
+.todo-session,
+.progress-session,
+.review-session{
+    margin-right: 5vh;
+}
+.todo-session-title-area .session-title,
+.progress-session-title-area .session-title,
+.review-session-title-area .session-title,
+.end-session-title-area .session-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+}
+.todo-session-title-area .session-title::before,
+.progress-session-title-area .session-title::before,
+.review-session-title-area .session-title::before,
+.end-session-title-area .session-title::before{
+    width: 10px;
+    height: 32px;
+    display: inline-block;
+    content: '';
+    margin-right: 1vh;
+    border-radius: 25px;
+}
+.todo-session-title-area .session-title::before{
+    background-color:var(--red);
+}
+.progress-session-title-area .session-title::before{
+    background-color: var(--green);
+}
+.review-session-title-area .session-title::before{
+    background-color: var(--orange);
+}
+.end-session-title-area .session-title::before{
+    background-color: var(--purple);
+}
+.todo-session-total-card,
+.progress-session-total-card,
+.review-session-total-card,
+.end-session-total-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo-session-total-card{
+    margin-left: 35%;
+}
+.progress-session-total-card{
+    margin-left: 21%;
+}
+.review-session-total-card{
+    margin-left: 28%;
+}
+.end-session-total-card{
+    margin-left: 40%;
+}
+.todo-session-add-card-button::after,
+.progress-session-add-card-button::after,
+.review-session-add-card-button::after,
+.end-session-add-card-button::after{
+    content: '\002B';
+    margin-left: 600%;
+    display: inline-block;
+    cursor: pointer;
+}
+.todo-session-card-area,
+.progress-session-card-area,
+.review-session-card-area,
+.end-session-card-area{
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+}
+.todo-session{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.task-card{
+    width: 325px;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
+    border: 4px solid rgba(51, 51, 61, 0.74);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5vh;
+}
+.task-card-priority{
+    width: 0.6rem;
+    height: 3vh;
+    border-radius: 25px;
+    margin-left: 0.6rem;
+    background: var(--red);
+}
+.task-card-title{
+    font-size: 0.9rem;
+    color: var(--session--title--color);
+    margin-left: 5%;
+}
+.settings-icon i{
+    color: var(--session--title--color);
+    margin-left: 550%;
+    cursor: pointer;
+}
+.add-card-menu-page-one{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.2);;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
+    border: 4px solid rgba(51, 51, 61, 0.74);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.add-card-menu-page-one p{
+    color: var(--session--title--color);
+}
+.add-card-menu-page-one input{
+    border: none;
+    width: 350px;
+    margin-top: 5%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+.add-card-menu-page-one input:focus{
+    border: none;
+    border-bottom: 5px solid var(--input--blue);
+}
+.add-card-menu-page-one button{
+    border: 5px double var(--input--blue);
+    background-color: transparent;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    margin-top: 10%;
+    cursor: pointer;
+}
+.add-card-menu-page-two{
+    width: 50%;
+    height: 30vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.2);;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
+    border: 4px solid rgba(51, 51, 61, 0.74);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.add-card-menu-page-two button{
+    width: 30%;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--session--title--color);
+    padding-bottom: 5px;
+    transition: .8s all ease;
+}
+.add-card-menu-page-two button:nth-child(1){
+    border-bottom: 3px solid var(--priority--red);
+    margin-bottom: 1.5vh;
+}
+.add-card-menu-page-two button:nth-child(2){
+    margin-bottom: 1.5vh;
+    border-bottom: 3px solid var(--priority--yellow);
+}
+.add-card-menu-page-two button:nth-child(3){
+    border-bottom: 3px solid var(--priority--blue);
+}
