@@ -11,6 +11,7 @@ import {todoSessionCardArea,
     reviewSessionTotalCard,
     endSessionTotalCard
     } from "./selectors.js";
+import { newCardSession } from "./temporaryCard.js";
 let todoTotalCard = 0;
 let progressTotalCard = 0;
 let reviewTotalCard = 0;
@@ -72,23 +73,30 @@ export function createCardElements(newCardTitle,newCardSession,newCardPriority){
         if(settingsMenu.style.display == "none") settingsMenu.style.display = "flex";
         else settingsMenu.style.display = "none";
     });
-    newCardSelectSession(newCardSession,newTaskCard);
     let cardNewSession;
     changeSessionTodoButton.addEventListener("click",()=>{
         cardNewSession = "todoSession";
-        changeCardSession(cardNewSession,newCardSession,newTaskCard);
+        const session = changeCardSession(cardNewSession,newCardSession);
+        newCardSession = session;
+        newCardSelectSession(session,newTaskCard);
     });
     changeSessionProgressButton.addEventListener("click",()=>{
         cardNewSession = "progressSession";
-        changeCardSession(cardNewSession,newCardSession,newTaskCard);
+        const session = changeCardSession(cardNewSession,newCardSession);
+        newCardSession = session;
+        newCardSelectSession(session,newTaskCard);
     });
     changeSessionReviewButton.addEventListener("click",()=>{
         cardNewSession = "reviewSession";
-        changeCardSession(cardNewSession,newCardSession,newTaskCard);
+        const session = changeCardSession(cardNewSession,newCardSession);
+        newCardSession = session;
+        newCardSelectSession(session,newTaskCard);
     });
     changeSessionEndButton.addEventListener("click",()=>{
         cardNewSession = "endSession";
-        changeCardSession(cardNewSession,newCardSession,newTaskCard);
+        const session = changeCardSession(cardNewSession,newCardSession);
+        newCardSession = session;
+        newCardSelectSession(session,newTaskCard);
     });
     deleteButton.addEventListener("click",()=>{
         deleteButton.parentElement.parentElement.parentElement.remove();
@@ -99,64 +107,38 @@ export function createCardElements(newCardTitle,newCardSession,newCardPriority){
             settingsMenu.style.display = "none";
         }
     });
+    newCardSelectSession(newCardSession,newTaskCard);
 }
-function changeCardSession(cardNewSession,newCardSession,newTaskCard){
-    if(cardNewSession == "todoSession" && newCardSession!="todoSession") {
-        todoTotalCard++;
-        todoSessionCardArea.appendChild(newTaskCard);
-        if(newCardSession == "progressSession") progressTotalCard--;
-        else if(newCardSession == "reviewSession") reviewTotalCard--;
-        else if(newCardSession == "endSession") endTotalCard--;
+function changeCardSession(cardNewSession,newCardSession){
+    if(cardNewSession === "todoSession" && newCardSession !="todoSession"){
+        if(newCardSession === "progressSession") progressTotalCard--;
+        else if(newCardSession === "reviewSession") reviewTotalCard--;
+        else if(newCardSession === "endSession") endTotalCard--;        
         newCardSession = "todoSession";
-        console.log(newCardSession);
-        console.log(`todototalcard = ${todoTotalCard}`);
-        console.log(`progresstotalcard = ${progressTotalCard}`);
-        console.log(`reviewtotalcard = ${reviewTotalCard}`);
-        console.log(`endtotalcard = ${endTotalCard}`);
     }
-    else if(cardNewSession == "progressSession" && newCardSession!="progressSession") {
-        progressTotalCard++;
-        progressSessionCardArea.appendChild(newTaskCard);
-        if(newCardSession =="todoSession") todoTotalCard--;
-        else if(newCardSession == "reviewSession") reviewTotalCard--;
-        else if(newCardSession == "endSession") endTotalCard--;
+    else if(cardNewSession ==="progressSession" && newCardSession !="progressSession"){
+        if(newCardSession === "todoSession") todoTotalCard--;
+        else if(newCardSession ==="reviewSession") reviewTotalCard--;
+        else if(newCardSession === "endSession") endTotalCard--;
         newCardSession = "progressSession";
-        console.log(newCardSession);
-        console.log(`todototalcard = ${todoTotalCard}`);
-        console.log(`progresstotalcard = ${progressTotalCard}`);
-        console.log(`reviewtotalcard = ${reviewTotalCard}`);
-        console.log(`endtotalcard = ${endTotalCard}`);
     }
-    else if(cardNewSession == "reviewSession" && newCardSession!="reviewSession") {
-        reviewTotalCard++;
-        reviewSessionCardArea.appendChild(newTaskCard);
-        if(newCardSession =="todoSession") todoTotalCard--;
-        else if(newCardSession == "progressSession") progressTotalCard--;
-        else if(newCardSession == "endSession") endTotalCard--;
+    else if(cardNewSession ==="reviewSession" && newCardSession !="reviewSession"){
+        if(newCardSession === "todoSession") todoTotalCard--;
+        else if(newCardSession ==="progressSession") progressTotalCard--;
+        else if(newCardSession === "endSession") endTotalCard--;
         newCardSession = "reviewSession";
-        console.log(newCardSession);
-        console.log(`todototalcard = ${todoTotalCard}`);
-        console.log(`progresstotalcard = ${progressTotalCard}`);
-        console.log(`reviewtotalcard = ${reviewTotalCard}`);
-        console.log(`endtotalcard = ${endTotalCard}`);
     }
-    else if(cardNewSession == "endSession" && newCardSession!="endSession") {
-        endTotalCard++;
-        endSessionCardArea.appendChild(newTaskCard);
-        if(newCardSession =="todoSession") todoTotalCard--;
-        else if(newCardSession == "progressSession") progressTotalCard--;
-        else if(newCardSession == "reviewSession") reviewTotalCard--;
+    else if(cardNewSession ==="endSession" && newCardSession !="endSession"){
+        if(newCardSession === "todoSession") todoTotalCard--;
+        else if(newCardSession ==="progressSession") progressTotalCard--;
+        else if(newCardSession === "reviewSession") reviewTotalCard--;
         newCardSession = "endSession";
-        console.log(newCardSession);
-        console.log(`todototalcard = ${todoTotalCard}`);
-        console.log(`progresstotalcard = ${progressTotalCard}`);
-        console.log(`reviewtotalcard = ${reviewTotalCard}`);
-        console.log(`endtotalcard = ${endTotalCard}`);
     }
     todoSessionTotalCard.textContent = `${todoTotalCard}`;
     progressSessionTotalCard.textContent = `${progressTotalCard}`;
     reviewSessionTotalCard.textContent = `${reviewTotalCard}`;
     endSessionTotalCard.textContent = `${endTotalCard}`;
+    return newCardSession;
 }
 function newCardSelectSession(newCardSession,newTaskCard){
     if(newCardSession == "todoSession"){

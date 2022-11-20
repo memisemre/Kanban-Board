@@ -3,8 +3,10 @@ progressSessionCardArea,
 reviewSessionCardArea,
 endSessionCardArea
  } from "./selectors.js";
+export let newCardSession;
 import { addTaskCardAddUI } from "./addTaskCardFromUI.js";
 export function createTemporaryCard(cardSession){
+    newCardSession = cardSession;
     //Create Element
     const temporaryCardContainer = document.createElement("div");
     const temporaryCardTitleDesc = document.createElement("p");
