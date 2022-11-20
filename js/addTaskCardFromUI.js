@@ -11,7 +11,6 @@ import {todoSessionCardArea,
     reviewSessionTotalCard,
     endSessionTotalCard
     } from "./selectors.js";
-import { newCardSession } from "./temporaryCard.js";
 let todoTotalCard = 0;
 let progressTotalCard = 0;
 let reviewTotalCard = 0;
@@ -79,24 +78,28 @@ export function createCardElements(newCardTitle,newCardSession,newCardPriority){
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
     });
     changeSessionProgressButton.addEventListener("click",()=>{
         cardNewSession = "progressSession";
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
     });
     changeSessionReviewButton.addEventListener("click",()=>{
         cardNewSession = "reviewSession";
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
     });
     changeSessionEndButton.addEventListener("click",()=>{
         cardNewSession = "endSession";
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
     });
     deleteButton.addEventListener("click",()=>{
         deleteButton.parentElement.parentElement.parentElement.remove();
