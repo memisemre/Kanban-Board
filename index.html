@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>emSX</title>
     <link rel="stylesheet" href="./css/customCss.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="logo">
-        <a href="#"><img src="/logo.png" alt="logo"></a>
-    </div>
+    <div class="logo"><a href="https://github.com/memisemre"><img src="/logo.png" alt="logo"></a></div>
     <div class="app-container">
         <div class="todo-session">
             <div class="todo-session-title-area">
@@ -21,15 +18,7 @@
                 </div>
                 <div class="todo-session-add-card-button"></div>
             </div>
-            <div class="todo-session-card-area">
-                <!-- <div class="task-card">
-                    <div class="task-card-priority"></div>
-                    <h1 class="task-card-title">Task Card Title</h1>
-                    <div class="settings-icon">
-                        <i class="fa fa-light fa-gear"></i>
-                    </div>
-                </div> -->
-            </div>
+            <div class="todo-session-card-area"></div>
         </div>
         <div class="progress-session">
             <div class="progress-session-title-area">
@@ -62,15 +51,16 @@
             <div class="end-session-card-area"></div>
         </div>
     </div>
-    <div class="add-card-menu-page-one">
-        <input type="text" name="title" value="Please, enter the title of task." onfocus="if(this.value!=='')this.value=''" onblur="if(this.value=='')this.value='Please, enter the title of task.'" >
-        <button >Next Step</button>
-    </div>
-    <div class="add-card-menu-page-two">
-        <button class="high-priority">High Priority</button>
-        <button class="medium-priority">Medium Priority</button>
-        <button class="low-priority">Low Priority</button>
+    <div class="info-message-container">
+        <div class="exclamation">
+            <div class="stick"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="info-message-title"> <span></span> </div>
+        <div class="info-message-text"> <span></span></div>
+        <button class="info-confirm-button">Confirm</button>
     </div>
     <script type="module" src="app.js"></script>
+    <script src="https://kit.fontawesome.com/c2e884e60d.js" crossorigin="anonymous"></script>
 </body>
 </html>
