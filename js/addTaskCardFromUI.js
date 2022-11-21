@@ -58,7 +58,6 @@ export function createCardElements(newCardTitle,newCardSession,newCardPriority){
     settingsMenu.appendChild(changeSessionReviewButton);
     settingsMenu.appendChild(changeSessionEndButton);
     settingsMenu.appendChild(deleteButton);
-    newTaskCardSettingsMenu.appendChild(settingsMenu);
     newTaskCard.appendChild(newTaskCardPriority);
     newTaskCard.appendChild(newTaskCardTitle);
     newTaskCard.appendChild(newTaskCardSettingsMenu);
@@ -67,51 +66,73 @@ export function createCardElements(newCardTitle,newCardSession,newCardPriority){
     if(newCardPriority == "mediumPriority") newTaskCardPriority.style.background = "var(--priority--yellow)";
     if(newCardPriority == "lowPrirority") newTaskCardPriority.style.background = "var(--priority--blue)";
     //Click Event's
-    settingsMenu.style.display = "none";
-    newTaskCardSettingsMenu.addEventListener("click",()=>{
-        if(settingsMenu.style.display == "none") settingsMenu.style.display = "flex";
-        else settingsMenu.style.display = "none";
-    });
+   
     let cardNewSession;
     changeSessionTodoButton.addEventListener("click",()=>{
         cardNewSession = "todoSession";
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
-        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
+        settingsMenuSession(newCardSession,settingsMenu);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority);
     });
     changeSessionProgressButton.addEventListener("click",()=>{
         cardNewSession = "progressSession";
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
-        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
+        settingsMenuSession(newCardSession,settingsMenu);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority);
     });
     changeSessionReviewButton.addEventListener("click",()=>{
         cardNewSession = "reviewSession";
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
-        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
+        settingsMenuSession(newCardSession,settingsMenu);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority);
     });
     changeSessionEndButton.addEventListener("click",()=>{
         cardNewSession = "endSession";
         const session = changeCardSession(cardNewSession,newCardSession);
         newCardSession = session;
         newCardSelectSession(session,newTaskCard);
-        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority)
+        settingsMenuSession(newCardSession,settingsMenu);
+        updateCardFromDataBase(newCardTitle,newCardSession,newCardPriority);
     });
     deleteButton.addEventListener("click",()=>{
-        deleteButton.parentElement.parentElement.parentElement.remove();
+        newTaskCard.remove();
         deleteCardFromDataBase(newCardTitle);
+        if(newCardSession==="todoSession") todoTotalCard--;
+        else if(newCardSession==="progressSession") progressTotalCard--;
+        else if(newCardSession === "reviewSession") reviewTotalCard--;
+        else if(newCardSession=== "endSession") endTotalCard--;
+        todoSessionTotalCard.textContent = `${todoTotalCard}`;
+        progressSessionTotalCard.textContent = `${progressTotalCard}`;
+        reviewSessionTotalCard.textContent = `${reviewTotalCard}`;
+        endSessionTotalCard.textContent = `${endTotalCard}`;
     });
     document.addEventListener("click",(mouseE)=>{
         if(mouseE.target.classList != newTaskCardSettingsMenuOpenIcon.classList){
             settingsMenu.style.display = "none";
         }
     });
+    settingsMenu.style.display = "none";
+    newTaskCardSettingsMenu.addEventListener("click",()=>{
+        if(settingsMenu.style.display == "none") settingsMenu.style.display = "flex";
+        else settingsMenu.style.display = "none";
+         
+    });
+    settingsMenuSession(newCardSession,settingsMenu);
     newCardSelectSession(newCardSession,newTaskCard);
 }
+function settingsMenuSession(newCardSession,settingsMenu){
+    if(newCardSession ==="todoSession")todoSessionCardArea.appendChild(settingsMenu);
+    if(newCardSession ==="progressSession")progressSessionCardArea.appendChild(settingsMenu);
+    if(newCardSession ==="reviewSession")reviewSessionCardArea.appendChild(settingsMenu);
+    if(newCardSession ==="endSession")endSessionCardArea.appendChild(settingsMenu);
+}
+
 function changeCardSession(cardNewSession,newCardSession){
     if(cardNewSession === "todoSession" && newCardSession !="todoSession"){
         if(newCardSession === "progressSession") progressTotalCard--;
