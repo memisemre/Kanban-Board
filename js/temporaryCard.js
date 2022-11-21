@@ -1,7 +1,11 @@
 import { todoSessionCardArea,
 progressSessionCardArea,
 reviewSessionCardArea,
-endSessionCardArea
+endSessionCardArea,
+todoSessionAddTaskButton,
+progressSessionAddTaskButton,
+reviewSessionAddTaskButton,
+endSessionAddTaskButton
  } from "./selectors.js";
 export let newCardSession;
 import { addTaskCardAddUI } from "./addTaskCardFromUI.js";
@@ -53,6 +57,7 @@ export function createTemporaryCard(cardSession){
             let newCardPriority = "highPriority";
             temporaryCardContainer.remove();
             addTaskCardAddUI(newCardTitle,newCardSession,newCardPriority);
+            addTaskButtonsOp();
         }
         else alert("Please enter title task."); //Custom Alert Box;
     });
@@ -63,6 +68,7 @@ export function createTemporaryCard(cardSession){
             let newCardPriority = "mediumPriority";
             temporaryCardContainer.remove();
             addTaskCardAddUI(newCardTitle,newCardSession,newCardPriority);
+            addTaskButtonsOp();
         }
         else alert("Please enter title task."); //Custom Alert Box;
     });
@@ -73,6 +79,7 @@ export function createTemporaryCard(cardSession){
             let newCardPriority = "lowPriority";
             temporaryCardContainer.remove();
             addTaskCardAddUI(newCardTitle,newCardSession,newCardPriority);
+            addTaskButtonsOp();
         }
         else alert("Please enter title task."); //Custom Alert Box;
     });
@@ -81,4 +88,10 @@ export function createTemporaryCard(cardSession){
     if(cardSession == "progressSession") progressSessionCardArea.appendChild(temporaryCardContainer);
     if(cardSession == "reviewSession") reviewSessionCardArea.appendChild(temporaryCardContainer);
     if(cardSession == "endSession") endSessionCardArea.appendChild(temporaryCardContainer);
+}
+function addTaskButtonsOp(){
+    todoSessionAddTaskButton.style.opacity = "1";
+    progressSessionAddTaskButton.style.opacity = "1";
+    reviewSessionAddTaskButton.style.opacity = "1";
+    endSessionAddTaskButton.style.opacity = "1";
 }
