@@ -160,7 +160,6 @@ body{
     height: 3vh;
     border-radius: 25px;
     margin-left: 0.6rem;
-    background: var(--red);
 }
 .task-card-title{
     font-size: 0.9rem;

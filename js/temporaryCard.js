@@ -84,10 +84,10 @@ export function createTemporaryCard(cardSession){
         else alert("Please enter title task."); //Custom Alert Box;
     });
     //Card Session 
-    if(cardSession == "todoSession") todoSessionCardArea.appendChild(temporaryCardContainer);
-    if(cardSession == "progressSession") progressSessionCardArea.appendChild(temporaryCardContainer);
-    if(cardSession == "reviewSession") reviewSessionCardArea.appendChild(temporaryCardContainer);
-    if(cardSession == "endSession") endSessionCardArea.appendChild(temporaryCardContainer);
+    if(cardSession === "todoSession") todoSessionCardArea.appendChild(temporaryCardContainer);
+    if(cardSession === "progressSession") progressSessionCardArea.appendChild(temporaryCardContainer);
+    if(cardSession === "reviewSession") reviewSessionCardArea.appendChild(temporaryCardContainer);
+    if(cardSession === "endSession") endSessionCardArea.appendChild(temporaryCardContainer);
 }
 function addTaskButtonsOp(){
     todoSessionAddTaskButton.style.opacity = "1";

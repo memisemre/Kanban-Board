@@ -62,11 +62,10 @@ export function createCardElements(newCardTitle,newCardSession,newCardPriority){
     newTaskCard.appendChild(newTaskCardTitle);
     newTaskCard.appendChild(newTaskCardSettingsMenu);
     //Select Priority Color
-    if(newCardPriority == "highPriority") newTaskCardPriority.style.background = "var(--priority--red)";
-    if(newCardPriority == "mediumPriority") newTaskCardPriority.style.background = "var(--priority--yellow)";
-    if(newCardPriority == "lowPrirority") newTaskCardPriority.style.background = "var(--priority--blue)";
+    if(newCardPriority === "highPriority") newTaskCardPriority.style.backgroundColor = "var(--priority--red)";
+    else if(newCardPriority === "mediumPriority") newTaskCardPriority.style.backgroundColor = "var(--priority--yellow)";
+    else if(newCardPriority === "lowPriority") newTaskCardPriority.style.backgroundColor = "var(--priority--blue)";
     //Click Event's
-   
     let cardNewSession;
     changeSessionTodoButton.addEventListener("click",()=>{
         cardNewSession = "todoSession";
