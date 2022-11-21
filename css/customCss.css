@@ -41,6 +41,51 @@ body{
     margin-top: 10vh;
     opacity: 1;
 }
+@media screen and (max-width: 900px) {
+    .app-container{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        row-gap: 15vh;
+    }
+    .todo-session{
+        grid-row: 1;
+    }
+    .progress-session{
+        grid-row: 2;
+    }
+    .review-session{
+        grid-row: 3;
+    }
+    .end-session{
+        grid-row: 4;
+    }
+    .todo-session-card-area,
+    .progress-session-card-area,
+    .review-session-card-area,
+    .end-session-card-area{
+        max-height: 25vh;
+        overflow: auto;
+    }
+}
+@media screen and (max-width: 1600px) {
+    .app-container{
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        grid-template-rows: auto auto;
+    }
+    .todo-session-card-area,
+    .progress-session-card-area,
+    .review-session-card-area,
+    .end-session-card-area{
+        max-height: 25vh;
+        overflow: auto;
+    }
+    .review-session,
+    .end-session{
+        margin-top: -10vh;
+    }
+}
 .todo-session-title-area,
 .progress-session-title-area,
 .review-session-title-area,
