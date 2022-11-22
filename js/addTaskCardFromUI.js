@@ -15,7 +15,7 @@ let todoTotalCard = 0;
 let progressTotalCard = 0;
 let reviewTotalCard = 0;
 let endTotalCard = 0;
-export function addTaskCardAddUI(newCardTitle,newCardSession,newCardPriority){
+export function addTaskCardAdd(newCardTitle,newCardSession,newCardPriority){
     writeCardFromDataBase(newCardTitle,newCardSession,newCardPriority);
     createCardElements(newCardTitle,newCardSession,newCardPriority);
 }

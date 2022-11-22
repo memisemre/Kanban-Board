@@ -19,3 +19,9 @@ export const infoMessageContainer = document.querySelector(".info-message-contai
 export const infoMessageTitle = document.querySelector(".info-message-title span");
 export const infoMessageText = document.querySelector(".info-message-text span");
 export const infoMessageButton = document.querySelector(".info-confirm-button");
+
+export const createCardMenuContainer = document.querySelector(".create-card-menu-container");
+export const createCardMenuInput = document.querySelector(".create-card-menu-input");
+export const createCardMenuHighPriority = document.querySelector(".high-priority");
+export const createCardMenuMediumPriority = document.querySelector(".medium-priority");
+export const createCardMenuLowPriority  = document.querySelector(".low-priority");

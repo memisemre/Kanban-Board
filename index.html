@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>emSX</title>
     <link rel="stylesheet" href="./css/customCss.css">
+
 </head>
 <body>
     <div class="logo"><a href="https://github.com/memisemre"><img src="/logo.png" alt="logo"></a></div>
@@ -51,14 +52,18 @@
             <div class="end-session-card-area"></div>
         </div>
     </div>
-    <div class="info-message-container">
-        <div class="exclamation">
-            <div class="stick"></div>
-            <div class="dot"></div>
+    <!-- <div class="temporary-card">
+        <h1 class="temporary-card-title">Task Title</h1>
+        <i class="fa fa-light fa-gear"></i>
+    </div> -->
+    <div class="create-card-menu-container">
+        <h1 class="create-card-menu-title">Task Card Title</h1>
+        <input type="text" class="create-card-menu-input">
+        <div class="create-card-menu-button-container">
+            <button class="high-priority">High Priority</button>
+            <button class="medium-priority">Medium Priority</button>
+            <button class="low-priority">Low Priority</button>
         </div>
-        <div class="info-message-title"> <span></span> </div>
-        <div class="info-message-text"> <span></span></div>
-        <button class="info-confirm-button">Confirm</button>
     </div>
     <script type="module" src="app.js"></script>
     <script src="https://kit.fontawesome.com/c2e884e60d.js" crossorigin="anonymous"></script>
