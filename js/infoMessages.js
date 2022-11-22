@@ -24,4 +24,8 @@ export function infoMessagePopUp(alertDesc){
     infoMessageContainer.appendChild(infoMessageDesc);
     infoMessageContainer.appendChild(infoMessageConfirmButton);
     body.appendChild(infoMessageContainer);
+    infoMessageConfirmButton.addEventListener("click",()=>{
+        infoMessageContainer.remove();
+    });
+
 }

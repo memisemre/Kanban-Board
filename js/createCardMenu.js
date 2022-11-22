@@ -10,22 +10,29 @@ import { todoSessionAddTaskButton,
     appContainer
  } from "./selectors.js";
 import { addTaskCardAdd } from "./addTaskCardFromUI.js";
+import { infoMessagePopUp } from "./infoMessages.js";
 export function createCardMenu(newCardSession,temproaryCardContainer){
     temproaryCardContainer.remove();
     createCardMenuContainer.style.display = "flex";
     appContainer.style.opacity = "0.3";
     createCardMenuHighPriority.onclick = ()=>{
-        elementDisplays();
-        addTaskCardAdd(createCardMenuInput.value,newCardSession,"highPriority");
-    };
+        if(createCardMenuInput.value ==="") infoMessagePopUp("Please,enter title of task");
+        else {
+            elementDisplays();
+            addTaskCardAdd(createCardMenuInput.value,newCardSession,"highPriority");
+    }};
     createCardMenuMediumPriority.onclick = ()=>{
+        if(createCardMenuInput.value ==="") infoMessagePopUp("Please,enter title of task");
+        else {
         elementDisplays();
         addTaskCardAdd(createCardMenuInput.value,newCardSession,"mediumPriority");
-    };
+    }};
     createCardMenuLowPriority.onclick = ()=>{
+        if(createCardMenuInput.value ==="") infoMessagePopUp("Please,enter title of task");
+        else {
         elementDisplays();
         addTaskCardAdd(createCardMenuInput.value,newCardSession,"lowPriority");
-    };
+    }};
 }
 function elementDisplays(){
     addTaskButtonsOp();
