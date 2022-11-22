@@ -1,0 +1,139 @@
+:root{
+    --icon--area--background--color:#f2f2f4 ;
+    --icon--area--item--color: #ff5c5c;
+    --text--color: #f2f2f4;
+    --alert--title--color: #D6E4E5;
+    --border--blue: #2196f3;
+}
+*{
+    color: var(--text--color);
+}
+.info-message-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0.1);;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
+    border: 4px solid rgba(51, 51, 61, 0.74);
+    border-radius: 2vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.icon-area{
+    border: 5px solid var(--icon--area--item--color);
+    margin-top: -5vh;
+    width: 10vh;
+    background-color: var(--icon--area--background--color);
+    height: 10vh;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.stick{
+    width: 15%;
+    height: 50%;
+    border-radius: 1vh;
+    background-color: var(--icon--area--item--color);
+}
+.dot{
+    margin-top: 8%;
+    width: 15%;
+    height: 15%;
+    background-color: var(--icon--area--item--color);
+    border-radius: 50%;
+}
+.info-message-title{
+    font-size: 3vh;
+    margin-top: 5%;
+    font-weight: bold;
+    letter-spacing: 0.2vh;
+}
+.info-message-description{
+    font-size: 2vh;
+    margin-top: 5%;
+    max-width: 50%;
+    text-align: center;
+}
+.info-message-confirm-button{
+    border: none;
+    background: transparent;
+    color: var(--alert--title--color);
+    font-size: 2vh;
+    margin-top: 10%;
+    width: 25%;
+    padding-bottom: 3%;
+    cursor: pointer;
+    border-bottom: 5px solid var(--border--blue);
+    border-radius: 10%;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease-in;
+}
+.info-message-confirm-button:hover{
+    color: var(--border--blue);
+    border-bottom: 5px solid var(--alert--title--color);
+}
+@media screen and (max-width: 1300px) {
+    .icon-area{
+        width: 9vh;
+        height: 9vh;
+        margin-top: -4.5vh;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .icon-area{
+        width: 8vh;
+        height: 8vh;
+        margin-top: -4vh;
+    }
+    .info-message-title{
+        font-size: 2.5vh;
+        margin-top: 5%;
+    }
+    .info-message-description{
+        font-size: 1.5vh;
+        margin-top: 20%;
+    }
+    .info-message-confirm-button{
+        font-size: 1.5vh;
+        margin-top: 25%;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .icon-area{
+        width: 7vh;
+        height: 7vh;
+        margin-top: -3.5vh;
+    }
+}
+@media screen and (max-width: 660px) {
+    .info-message-container{
+        height: 25vh;
+    }
+    .icon-area{
+        width: 6vh;
+        height: 6vh;
+        margin-top: -3vh;
+    }
+    .info-message-title{
+        font-size: 1.5vh;
+        margin-top: 25%;
+    }
+    .info-message-description{
+        font-size: 1vh;
+    }
+    .info-message-confirm-button{
+        font-size: 1vh;
+    }
+}

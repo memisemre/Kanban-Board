@@ -1,3 +1,5 @@
+export const body = document.querySelector("body");
+
 export const appContainer = document.querySelector(".app-container");
 
 export const progressSessionAddTaskButton = document.querySelector(".progress-session-add-card-button");
