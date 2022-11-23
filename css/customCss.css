@@ -1,5 +1,6 @@
-/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Bebas+Neue&family=Ms+Madi&family=Open+Sans:ital,wght@0,400;0,700;1,300;1,500&family=Roboto+Mono&family=Roboto+Slab:wght@900&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -25,14 +26,27 @@ a{
 body{
     background-color: var(--body--background--color);
 }
-.logo{
+/* Logo Area */
+.logo a{
+    font-family: 'Teko', sans-serif;
     position: absolute;
-    top: -2.1vh;
-    left: -2vh;
+    color: white;
+    font-size: 2vh;
+    top: 1vh;
+    left: 1vh;
+    font-weight: bold;
+    transition: 0.3s all;
 }
-.logo a img {
-    height: 15vh;
+.logo a span{
+    color: var(--input--blue);
+    margin-left: 5%;
 }
+.logo a:hover{
+    top: 1.5vh;
+    padding-bottom: 0.1%;
+    border-bottom: 3px solid var(--input--blue);
+}
+/* Logo Area */
 .app-container{
     display: flex;
     width: 100%;
@@ -267,7 +281,6 @@ body{
 .delete-card i{
     color: var(--red);
 }
-
 .temporary-card-title{
     margin: 25px 100px 25px 25px;
     font-size: 1.2rem;
