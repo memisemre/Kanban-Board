@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Bebas+Neue&family=Ms+Madi&family=Open+Sans:ital,wght@0,400;0,700;1,300;1,500&family=Roboto+Mono&family=Roboto+Slab:wght@900&family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
-
+/* Reset Css */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Circular,system,-apple-system,\.SFNSText-Regular,San Francisco,Roboto,Segoe UI,Helvetica Neue,Lucida Grande,sans-serif;
-    font-size: 1.2rem;
 }
 a{
     text-decoration: none;
 }
+/* Reset Css */
 :root{
     --body--background--color: #33333d;
     --session--title--color: #f2f2f4;
@@ -26,11 +25,11 @@ a{
 body{
     background-color: var(--body--background--color);
 }
+
 /* Logo Area */
 .logo a{
     font-family: 'Teko', sans-serif;
     position: absolute;
-    color: white;
     font-size: 2vh;
     top: 3vh;
     left: 3vh;
@@ -53,22 +52,53 @@ body{
     justify-content: center;
     grid-template-columns: auto auto auto auto;
 }
+/* General Styles */
+*{
+    font-family: Circular,system,-apple-system,\.SFNSText-Regular,San Francisco,Roboto,Segoe UI,Helvetica Neue,Lucida Grande,sans-serif;
+    font-size: 1.2rem;
+    color: var(--session--title--color);
+}
+.todo-session-title-area,
+.progress-session-title-area,
+.review-session-title-area,
+.end-session-title-area,
+.task-card,
+.settings-menu,
+.create-card-menu-container{
+    background-color: rgba(255, 255, 255, 0.1);;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
+    border: 4px solid rgba(51, 51, 61, 0.74);
+    border-radius: 10px;
+    transition: 0.4s all ease;
+}
+.todo-session-title-area .session-title,
+.progress-session-title-area .session-title,
+.review-session-title-area .session-title,
+.end-session-title-area .session-title,
+.todo-session-total-card,
+.progress-session-total-card,
+.review-session-total-card,
+.end-session-total-card,
+.todo-session-card-area,
+.progress-session-card-area,
+.review-session-card-area,
+.end-session-card-area,
+.settings-menu button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .todo-session-title-area,
 .progress-session-title-area,
 .review-session-title-area,
 .end-session-title-area{
     width: 350px;
     height: 6vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(1.8px);
-    -webkit-backdrop-filter: blur(1.8px);
-    border: 4px solid rgba(51, 51, 61, 0.74);
-    transition: 0.4s all ease;
-    border-radius: 10px;
-    color: var(--session--title--color);
 }
 .todo-session,
 .progress-session,
@@ -79,9 +109,6 @@ body{
 .progress-session-title-area .session-title,
 .review-session-title-area .session-title,
 .end-session-title-area .session-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-left: 5%;
 }
 .todo-session-title-area .session-title::before,
@@ -95,6 +122,29 @@ body{
     margin-right: 1vh;
     border-radius: 25px;
 }
+.todo-session-total-card,
+.progress-session-total-card,
+.review-session-total-card,
+.end-session-total-card{
+    flex-direction: column;
+}
+.todo-session-add-card-button::after,
+.progress-session-add-card-button::after,
+.review-session-add-card-button::after,
+.end-session-add-card-button::after{
+    content: '\002B';
+    display: inline-block;
+    cursor: pointer;
+}
+.todo-session-card-area,
+.progress-session-card-area,
+.review-session-card-area,
+.end-session-card-area{
+    margin-top: 2vh;
+    flex-direction: column;
+    width: 100%;
+}
+/* General Styles */
 .todo-session-title-area .session-title::before{
     background-color:var(--red);
 }
@@ -107,81 +157,33 @@ body{
 .end-session-title-area .session-title::before{
     background-color: var(--purple);
 }
-.todo-session-total-card,
-.progress-session-total-card,
-.review-session-total-card,
-.end-session-total-card{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.todo-session-total-card{
-    margin-left: 35%;
-}
-.progress-session-total-card{
-    margin-left: 21%;
-}
-.review-session-total-card{
-    margin-left: 28%;
-}
-.end-session-total-card{
-    margin-left: 40%;
-}
-.todo-session-add-card-button::after,
-.progress-session-add-card-button::after,
-.review-session-add-card-button::after,
-.end-session-add-card-button::after{
-    content: '\002B';
-    margin-left: 600%;
-    display: inline-block;
-    cursor: pointer;
-}
-.todo-session-card-area,
-.progress-session-card-area,
-.review-session-card-area,
-.end-session-card-area{
-    margin-top: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 350px;
-}
-.todo-session{
+.todo-session,
+.progress-session,
+.review-session{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.task-card,
-.temporary-card{
-    position: relative;
-    width: 325px;
-    height: 5vh;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(1.8px);
-    -webkit-backdrop-filter: blur(1.8px);
-    border: 4px solid rgba(51, 51, 61, 0.74);
-    display: flex;
+.task-card{
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto 70% auto;
     align-items: center;
-    margin-bottom: 1.5vh;
-    z-index: 1;
+    padding: 3%;
+    margin-top: 5%;
 }
 .task-card-priority{
     width: 0.6rem;
+    grid-column: 1;
     height: 3vh;
     border-radius: 25px;
     margin-left: 0.6rem;
 }
 .task-card-title{
     font-size: 0.9rem;
-    color: var(--session--title--color);
     margin-left: 5%;
 }
 .settings-icon i{
-    color: var(--session--title--color);
-    margin-left: 550%;
     cursor: pointer;
 }
 .settings-menu{
@@ -189,9 +191,6 @@ body{
     z-index: 5;
     width: 15%;
     height: 25vh;
-    background-color: rgba(0, 0, 0, 1);;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
-    border: 4px solid rgba(51, 51, 61, 0.74);
     display: none;
     align-items: center;
     justify-content: center;
@@ -202,13 +201,9 @@ body{
     border: none;
     width: 80%;
     background-color: transparent;
-    color: var(--session--title--color);
     font-size: 16px;
     margin-top: 15px;
     padding-bottom: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: 0.3s all ease;
 }
@@ -237,7 +232,6 @@ body{
 .temporary-card-title{
     margin: 25px 100px 25px 25px;
     font-size: 1.2rem;
-    color: white;
     max-width: 75%;
 }
 .temporary-card i{
@@ -250,12 +244,6 @@ body{
     transform: translate(-50%,-50%);
     width: 50%;
     height: 30vh;
-    background-color: rgba(255, 255, 255, 0.1);;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(1.8px);
-    -webkit-backdrop-filter: blur(1.8px);
-    border: 4px solid rgba(51, 51, 61, 0.74);
-    border-radius: 25px;
     display: none;
     align-items: center;
     justify-content: center;
@@ -279,7 +267,6 @@ body{
 .create-card-menu-button-container button{
     border: none;
     background-color: transparent;
-    color: var(--session--title--color);
     padding: 3%;
     border-radius: 8%;
     transition: 0.3s all ease;
