@@ -17,4 +17,17 @@
     .end-session{
         margin-top: 5vh;
     }
+    .settings-menu{
+        width: 25%;
+    }
+}
+@media screen and (max-width:760px) {
+    .settings-menu{
+        width: 30%;
+    }
+}
+@media screen and (max-width:600px) {
+    .settings-menu{
+        width: 35%;
+    }
 }

@@ -27,5 +27,4 @@ export function infoMessagePopUp(alertDesc){
     infoMessageConfirmButton.addEventListener("click",()=>{
         infoMessageContainer.remove();
     });
-
 }
